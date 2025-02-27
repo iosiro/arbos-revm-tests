@@ -1,0 +1,28 @@
+[package]
+name = "arbos-revm-tests"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+# revm = { git = "https://github.com/iosiro/arbos-revm.git", branch = "arbos-revm-v54" }
+# stylus = { git = "https://github.com/bernard-wagner/nitro.git", branch = "dev", package = "stylus" }
+# arbutil = { git = "https://github.com/bernard-wagner/nitro.git", branch = "dev", package = "arbutil" }
+# wasmer-types = { git = "https://github.com/bernard-wagner/nitro.git", branch = "dev", package = "wasmer-types" }
+
+revm = { path = "../revm/crates/revm", default-features = false, features = ["std"]}
+arbutil = { path = "../nitro/arbitrator/arbutil", default-features = false }
+stylus = { path = "../nitro/arbitrator/stylus", default-features = false }
+wasmer-types = { path = "../nitro/arbitrator/tools/wasmer/lib/types",  default-features = false }
+
+alloy-json-abi = { version = "0.8", default-features = false, features = [
+    "std",
+] }
+alloy-primitives = { version = "=0.8.21", default-features = false, features = [
+    "std",
+] }
+alloy-sol-types = { version = "0.8", default-features = false, features = [
+    "std",
+] }
+alloy-sol-macro = { version = "0.8.2", default-features = false }
+serde = { version = "1.0", default-features = false }
+serde_json = { version = "1.0", default-features = false }

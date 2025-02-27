@@ -1,0 +1,21 @@
+[package]
+name = "create_program"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+alloy-primitives = "0.8.1"
+stylus-sdk = { version = "0.8.1" }
+hex = "0.4.3"
+
+[profile.release]
+codegen-units = 1
+strip = true
+lto = true
+panic = "abort"
+
+[lib]
+crate-type = ["lib", "cdylib"]
+
+[features]
+export-abi = ["stylus-sdk/export-abi"]
